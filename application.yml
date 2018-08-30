@@ -14,12 +14,3 @@ spring:
       com.mysql.jdbc.Driver
     url:
       ${vcap.services.mysql.credentials.jdbcUrl}
-eureka:
-  instance:
-    nonSecurePort: 80
-    hostname: ${vcap.application.uris[0]}
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: ${vcap.services.service-registry.credentials.url}
