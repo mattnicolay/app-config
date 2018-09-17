@@ -5,12 +5,39 @@ security:
 management:
   security:
     enabled: false
+    
+spring:
+  datasource:
+    driverClassName:
+      com.mysql.jdbc.Driver
+    url:
+      jdbc:mysql://localhost:3306/amazon?allowPublicKeyRetrieval=true&useSSL=false
+    username:
+      dbuser
+    password:
+      dbpassword
 
+  jpa:
+    generate-ddl:
+      true
+    hibernate:
+      ddl-auto:
+        create
+    properties:
+      hibernate:
+        dialect:
+          org.hibernate.dialect.MySQL5Dialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
 spring:
   profiles:
     cloud
   datasource:
-    driverClassName:
-      com.mysql.jdbc.Driver
     url:
       ${vcap.services.mysql.credentials.jdbcUrl}
