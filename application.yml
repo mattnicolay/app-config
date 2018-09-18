@@ -5,7 +5,11 @@ security:
 management:
   security:
     enabled: false
-    
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 spring:
   datasource:
     driverClassName:
@@ -27,12 +31,6 @@ spring:
       hibernate:
         dialect:
           org.hibernate.dialect.MySQL5Dialect
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 
 ---
 spring:
