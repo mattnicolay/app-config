@@ -10,6 +10,14 @@ management:
       exposure:
         include: "*"
 
+hystrix:
+  metrics:
+    enabled: true
+
+feign:
+  hystrix:
+    enabled: true
+
 spring:
   datasource:
     driverClassName:
